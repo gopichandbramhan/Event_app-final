@@ -1,0 +1,52 @@
+<section class="registerblock">
+    <div class="registerformblock">
+        <div class="box-class">
+            <h2>Registration Form</h2>
+            <div class="alert alert-success success-msg"></div>
+            <div class="alert alert-danger danger-msg"></div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Full Name:</label>
+                        <input type="text" class="form-control" id="full_name" placeholder="Enter user name" name="full_name" [(ngModel)]="full_name">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Mobile No:</label>
+                        <input type="text" name="mob_no" class="form-control" id="mob_no" placeholder="Enter user name" [(ngModel)]="mob_no">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" name="email" class="form-control" id="email"  placeholder="Enter email id" [(ngModel)]="email">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Password:</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" [(ngModel)]="password">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Confirm Password:</label>
+                        <input type="password" name="password" class="form-control" id="confirm_password" placeholder="Enter confirm password" [(ngModel)]="confirm_password">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="file" id="photo" name="photo" (change)="fileUpload($event)" class="form-control" >
+                    </div>
+                    <div id="image" class="inline" selectable="False" [innerHTML]="printCaptcha">
+                    </div>
+                    <div class="inline refresh" (click)="generate()">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Enter Captcha:</label>
+                        <input type="text" name="captcha" class="form-control" id="captcha" placeholder="Enter captcha" [(ngModel)]="captcha">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="checkbox" id="terms" (click)="doAction($event)" class="form-check-input" [(ngModel)]="terms" value="checked">&nbsp;&nbsp;&nbsp; I accept terms and conditions
+                    </div>
+                    <div class="col-md-12 button">
+                        <button class="btn btn-success" (click)="registerUser()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-primary">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

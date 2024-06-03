@@ -1,0 +1,34 @@
+<section class="allevent">
+    <div class="container">
+        <h2>All Events</h2>
+        <div class="event-box1">
+            <div class="row">
+              <ng-container *ngIf="eventData;else anotherDiv">
+                <div class="col-md-3" *ngFor="let eventDatas of eventData;index as i;">
+                    <mat-card class="example-card">
+                        <!-- <img mat-card-image src="https://eventapp.laundryholic.com/event_backend/event_images/{{eventDatas.event_image}}" alt="Photo of a Shiba Inu"> -->
+                        <img mat-card-image src="http://127.0.0.1:9000/event_images/{{eventDatas.event_image}}" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                            <mat-card-title>{{eventDatas.event_name}}</mat-card-title>
+                            <mat-card-subtitle>{{eventDatas.event_name}}</mat-card-subtitle>
+                          <p>
+                            {{eventDatas.event_details.substring(0, 240)+'......'}}
+                          </p>
+                          <p><strong>Start Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_start_date}}</p>
+                          <p><strong>End Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_end_date}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-raised-button [routerLink]="['/view-event/',eventDatas.event_name,eventDatas.sr_id]" color="accent">More.......</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+              </ng-container>
+                <ng-template #anotherDiv>
+                  <div class="msg-div">
+                      <p>Currently No Event Found...</p>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>

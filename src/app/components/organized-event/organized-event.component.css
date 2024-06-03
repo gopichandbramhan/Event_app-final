@@ -1,0 +1,47 @@
+.form-block{
+    /* width: 50%; */
+    /* text-align: center; */
+    margin: auto;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 25px 30px 25px 30px;
+    background-color: white;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.col-md-12{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.mask-div{
+     /* border: 1px solid silver; */
+     border-radius: 5px;
+     width: 50%;
+     padding: 20px;
+     /* background-color: silver; */
+     margin: auto;
+     box-shadow: 1px 1px 7px #ccc;
+}
+
+label{
+    font-weight: 600;
+}
+
+.col-md-6{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+thead th{
+    background-color: #000 !important;
+    color: #febe00;
+    text-align: center;
+}
+table > thead, tbody{
+    text-align: center;
+}

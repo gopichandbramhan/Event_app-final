@@ -1,0 +1,38 @@
+<div class="container mt-5 mb-5">
+    <div class="login-div">
+        <h2>Forgot / Reset Password</h2>
+        <div class="alert alert-success">
+            <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+        <div class="alert alert-danger">
+            <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>User ID</mat-label>
+            <input matInput type="email" name="user_id" [(ngModel)]="user_id" placeholder="Email ID">
+        </mat-form-field>
+        <mat-form-field *ngIf = "flag" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Password">
+        </mat-form-field>
+        <mat-form-field *ngIf = "flag" appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" name="confirm_password" [(ngModel)]="confirm_password" placeholder="confirm_password">
+        </mat-form-field>
+        <div id="image" class="inline" selectable="False" [innerHTML]="printCaptcha">
+        </div>
+        <div class="inline refresh" (click)="generate()">
+            <i class="fas fa-sync"></i>
+        </div>
+        <mat-form-field  appearance="outline">
+            <mat-label>Captcha</mat-label>
+            <input matInput type="text" name="captcha" [(ngModel)]="captcha" placeholder="enter captcha">
+        </mat-form-field>
+        <div class="btn-div">
+            <button mat-raised-button color="primary" *ngIf = "!flag" (click)="checkUser()">submit</button>
+            <button mat-raised-button color="primary" *ngIf = "flag" (click)="submitPass()">submit</button>
+            <button mat-raised-button type="reset" >Reset</button>
+        </div>
+        <!-- <a routerLink="/forgotpass">Forgot Password</a> -->
+    </div>
+  </div>

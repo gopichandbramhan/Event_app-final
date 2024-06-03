@@ -1,0 +1,43 @@
+<div class="container">
+    <table *ngIf="dataArray" datatable [dtOptions]="dtOptions" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let dataArray of dataArray;index as i">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{dataArray.name}}</td>
+                <td>{{dataArray.email}}</td>
+                <td>{{dataArray.mobile_no}}</td>
+                <td>{{dataArray.message}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="!dataArray" datatable [dtOptions]="dtOptions" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

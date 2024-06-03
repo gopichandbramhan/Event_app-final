@@ -1,0 +1,60 @@
+<section class="header mb-5">
+  <div class="topbarmain dark-bg ">
+    <marquee class="color"><b>Come Join win !!!</b></marquee>
+  </div>
+  <div class="Mainnavbar shadow">
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container">
+          <a class="navbar-brand color" href="#">Event Organizer</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav" *ngIf="!user_type">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="aboutus">About us</a>
+              </li>           
+              <li class="nav-item">
+                <a class="nav-link" routerLink="contactus">Contact us</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" routerLink="login">login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="register">register</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li> -->
+            </ul>
+            <ul class="navbar-nav" *ngIf="user_type =='User'">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="user-dashboard">dashboard</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  routerLink="user-event">event</a>
+              </li>           
+              <li class="nav-item">
+                  <a class="nav-link"  routerLink="user-history">History</a>
+              </li> 
+              <li class="nav-item">
+                  <a class="nav-link"  routerLink="user-result">Result</a>
+              </li>  
+
+              <li class="nav-item">
+                  <a class="nav-link" (click)="logout()">logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    </section>

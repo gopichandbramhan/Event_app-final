@@ -1,0 +1,377 @@
+<div class="pageStart">
+<section class="event-form-block">
+    <div class="container">
+        <div class="mask-div1">
+            <div class="form-block1">
+                <h2>Add Event Details</h2><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">add event</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- {{eventData |json}} -->
+<section class="event-table">
+    <div class="container">
+        <div class="table-div">
+            <table *ngIf="eventData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Event Name</th>
+                    <th>Registration Start Date</th>
+                    <th>Registration End Date</th>
+                    <th>Event Start Date</th>
+                    <th>Event End Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let eventData of eventData;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{eventData.event_name}}</td>
+                    <td>{{eventData.register_start_date}}</td>
+                    <td>{{eventData.register_end_date}}</td>
+                    <td>{{eventData.event_start_date}}</td>
+                    <td>{{eventData.event_end_date}}</td>
+                    <td class="action">
+                        <button type="button" class="btn btn-success" data-toggle="modal" (click)="view(eventData.sr_id)" data-target="#myModal2">view</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" (click)="edit(eventData.sr_id)" data-target="#myModal3">edit</button>
+                        <button type="button" id = "{{eventData.sr_id}}" (click)="delete($event)"class="btn btn-danger">delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table *ngIf="!eventData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Event Name</th>
+                      <th>Registration Start Date</th>
+                      <th>Registration End Date</th>
+                      <th>Event Start Date</th>
+                      <th>Event End Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+              </table>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- The Modal1 -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Event Details</h4>
+          <button type="button" (click)="clearform()" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Event Name:</label>
+                    <input type="text" class="form-control" id="event_name" placeholder="Enter event name" name="event_name" [(ngModel)]="event_name">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Registration Fees:</label>
+                    <input type="text" class="form-control" id="registerFees" placeholder="Enter Registration fees" name="registerFees" [(ngModel)]="registerFees">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Registration Date Start:</label>
+                    <input type="date" class="form-control" id="registerStartDate" placeholder="start registration date" name="registerStartDate" [(ngModel)]="registerStartDate">
+                </div>
+                <br>
+                </div>
+                <div class="row form-group">
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Registration Date End:</label>
+                    <input type="date" class="form-control" id="registerEndDate" placeholder="start registration end" name="registerEndDate" [(ngModel)]="registerEndDate">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Event Date Start:</label>
+                    <input type="date" class="form-control" id="eventStartDate" placeholder="event date start" name="eventStartDate" [(ngModel)]="eventStartDate">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Event Date End:</label>
+                    <input type="date" class="form-control" id="eventEndDate" placeholder="event date end" name="eventEndDate" [(ngModel)]="eventEndDate">
+                    <!-- <input type="time" class="form-control" name="" id=""> -->
+                </div>
+                <br>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label for="email" class="form-label">1st Prize:</label>
+                    <input type="text" class="form-control" id="first_prize" placeholder="1st prize" name="first_prize" [(ngModel)]="first_prize">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">1st Prize Image:</label>
+                    <input type="file" class="form-control" accept="image/*" id="first_prize_image" (change)="fileUpload1($event)" placeholder="1st prize image" name="first_prize_image" >
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">2nd Prize:</label>
+                    <input type="text" class="form-control" id="second_prize" placeholder="2nd prize" name="second_prize" [(ngModel)]="second_prize">
+                </div>
+                <br>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label for="email" class="form-label">2nd Prize Image:</label>
+                    <input type="file" class="form-control" accept="image/*" id="second_prize_image" (change)="fileUpload2($event)" placeholder="2nd Prize Image" name="second_prize_image" >
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">3rd Prize:</label>
+                    <input type="text" class="form-control" id="third_prize" placeholder="3rd prize" name="third_prize" [(ngModel)]="third_prize">
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">3rd Prize Image:</label>
+                    <input type="file" class="form-control" accept="image/*" id="third_prize_image" (change)="fileUpload3($event)" placeholder="3rd Prize Image" name="third_prize_image">
+                </div>
+                <br>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label for="" class="form-label">Banner Image</label>
+                    <input type="file" id="photo" name="photo" (change)="fileUpload($event)" accept="image/*" class="form-control" >
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Event Details:</label>
+                    <textarea type="text" class="form-control" row="1" id="eventDetails" placeholder="event details...." name="eventDetails" [(ngModel)]="eventDetails"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="">Event Type</label>
+                    <select class="form-select" name="event_type" (change)="get_event_type($event)" id="event_type">
+                        <option value="">-------event type-------</option>
+                        <option value="image">image</option>
+                        <option value="video">video</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <button mat-raised-button (click)="postOrganizedEvent()" color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button mat-raised-button (click)="clearform()">Reset</button>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="clearform()" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal2 -->
+<div class="modal" id="myModal2">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="2">event details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngIf="viewdata">
+                        <tr>
+                            <td>event name</td>
+                            <td>{{viewdata.event_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>event details</td>
+                            <td>{{viewdata.event_details}}</td>
+                        </tr>
+                        <tr>
+                            <td>event start date</td>
+                            <td>{{viewdata.event_start_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>event end date</td>
+                            <td>{{viewdata.event_end_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>registration start date</td>
+                            <td>{{viewdata.register_start_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>registration end date</td>
+                            <td>{{viewdata.register_end_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>registration fees</td>
+                            <td>{{viewdata.registration_fees}}</td>
+                        </tr>
+                        <tr>
+                            <td>first prize</td>
+                            <td>{{viewdata.first_prize}}</td>
+                        </tr>
+                        <tr>
+                            <td>second prize</td>
+                            <td>{{viewdata.second_prize}}</td>
+                        </tr>
+                        <tr>
+                            <td>third prize</td>
+                            <td>{{viewdata.third_prize}}</td>
+                        </tr>
+                        <tr>
+                            <td>first prize image</td>
+                            <td><img src="http://127.0.0.1:9000/prizes/{{viewdata.first_prize_image}}" width="20%" alt=""></td>
+                            <!-- <td><img src="https://eventapp.laundryholic.com/event_backend/prizes/{{viewdata.first_prize_image}}" alt=""></td> -->
+                        </tr>
+                        <tr>
+                            <td>second prize image</td>
+                            <td><img src="http://127.0.0.1:9000/prizes/{{viewdata.second_prize_image}}" width="20%" alt=""></td>
+                            <!-- <td><img src="https://eventapp.laundryholic.com/event_backend/prizes/{{viewdata.second_prize_image}}" alt=""></td> -->
+                        </tr>
+                        <tr>
+                            <td>third prize image</td>
+                            <td><img src="http://127.0.0.1:9000/prizes/{{viewdata.third_prize_image}}" width="20%" alt=""></td>
+                            <!-- <td><img src="https://eventapp.laundryholic.com/event_backend/prizes/{{viewdata.third_prize_image}}" alt=""></td> -->
+                        </tr>
+                        <tr>
+                            <td>event type</td>
+                            <td>{{viewdata.event_type}}</td>
+                        </tr>
+                    </ng-container>
+                    
+                </tbody>
+            </table>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal3 -->
+<div class="modal" id="myModal3">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Event</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ng-container *ngIf="viewdata">
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Event Name:</label>
+                            <input type="hidden" name="id" id="id"  [(ngModel)]="id">
+                            <input type="text" class="form-control" id="event_name" placeholder="Enter event name" name="event_name" [(ngModel)]="event_name">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Registration Fees:</label>
+                            <input type="text" class="form-control" id="registerFees" placeholder="Enter Registration fees" name="registerFees" [(ngModel)]="registerFees">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Registration Date Start:</label>
+                            <input type="date" class="form-control" id="registerStartDate" placeholder="start registration date" name="registerStartDate" [(ngModel)]="registerStartDate">
+                        </div>
+                        <br>
+                        </div>
+                        <div class="row form-group">
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Registration Date End:</label>
+                            <input type="date" class="form-control" id="registerEndDate" placeholder="start registration end" name="registerEndDate" [(ngModel)]="registerEndDate">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Event Date Start:</label>
+                            <input type="date" class="form-control" id="eventStartDate" placeholder="event date start" name="eventStartDate" [(ngModel)]="eventStartDate">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Event Date End:</label>
+                            <input type="date" class="form-control" id="eventEndDate" placeholder="event date end" name="eventEndDate" [(ngModel)]="eventEndDate">
+                            <!-- <input type="time" class="form-control" name="" id=""> -->
+                        </div>
+                        <br>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">1st Prize:</label>
+                            <input type="text" class="form-control" id="first_prize" placeholder="1st prize" name="first_prize" [(ngModel)]="first_prize">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">1st Prize Image:</label>
+                            <input type="file" class="form-control" accept="image/*" id="first_prize_image" (change)="fileUpload1($event)" placeholder="1st prize image" name="first_prize_image" >
+                            <a href="http://127.0.0.1:9000/prizes/{{viewdata.first_prize_image}}" target="_blank">{{viewdata.first_prize_image}}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">2nd Prize:</label>
+                            <input type="text" class="form-control" id="second_prize" placeholder="2nd prize" name="second_prize" [(ngModel)]="second_prize">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">2nd Prize Image:</label>
+                            <input type="file" class="form-control" accept="image/*" id="second_prize_image" (change)="fileUpload2($event)" placeholder="2nd Prize Image" name="second_prize_image" >
+                            <a href="http://127.0.0.1:9000/prizes/{{viewdata.second_prize_image}}" target="_blank">{{viewdata.second_prize_image}}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">3rd Prize:</label>
+                            <input type="text" class="form-control" id="third_prize" placeholder="3rd prize" name="third_prize" [(ngModel)]="third_prize">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">3rd Prize Image:</label>
+                            <input type="file" class="form-control" accept="image/*" id="third_prize_image" (change)="fileUpload3($event)" placeholder="3rd Prize Image" name="third_prize_image">
+                            <a href="http://127.0.0.1:9000/prizes/{{viewdata.third_prize_image}}" target="_blank">{{viewdata.third_prize_image}}</a>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label for="" class="form-label">Banner Image</label>
+                            <input type="file" id="photo" name="photo" (change)="fileUpload($event)" accept="image/*" class="form-control" >
+                            <a href="http://127.0.0.1:9000/prizes/{{viewdata.third_prize_image}}">{{viewdata.third_prize_image}}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Event Details:</label>
+                            <textarea type="text" class="form-control" row="1" id="eventDetails" placeholder="event details...." name="eventDetails" [(ngModel)]="eventDetails"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="">Event Type</label>
+                            <select class="form-select" name="event_type" (change)="get_event_type($event)" id="event_type">
+                                <option value="">-------event type-------</option>
+                                <option value="image" [selected]="'image'==viewdata.event_type">image</option>
+                                <option value="video" [selected]="'video'==viewdata.event_type">video</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <button mat-raised-button (click)="updateEvent()" color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button mat-raised-button (click)="clearform()">Reset</button>
+                        </div>
+                    </div>
+                </ng-container>
+                </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

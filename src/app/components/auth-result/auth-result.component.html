@@ -1,0 +1,247 @@
+<div class="pageStart">
+<section class="auth-result">
+    <div class="container">
+        <div class="box1">
+            <div class="box-container1">
+                <h2>Event Result</h2><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">add result</button>
+                <!-- <div class="row">
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Event Name:</label>
+                        <select class="form-select"  (change)="getFirstWinner($event)" name="event_name" id="event_name">
+                            <option value="">-----select event name----</option>
+                            <option *ngFor = "let eventData of eventData" value="{{eventData.event_name}}-{{eventData.sr_id}}">{{eventData.event_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">1<sup>st</sup> Prize (Winner):</label>
+                        <select class="form-select" (change)="getSecondWinner($event)" name="first_prize" id="first_prize" disabled>
+                            <option value="">-----select first winner----</option>
+                            <option *ngFor = "let first_prize_arr of first_prize_arr" value="{{first_prize_arr.user_id}}">{{first_prize_arr.full_name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">2<sup>nd</sup> Prize (Winner):</label>
+                        <select class="form-select" (change)="getThirdWinner($event)" name="second_prize" id="second_prize">
+                            <option value="">-----select second winner----</option>
+                            <option *ngFor = "let second_prize_arr of second_prize_arr" value="{{second_prize_arr.user_id}}">{{second_prize_arr.full_name}}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">3<sup>rd</sup> Prize (Winner):</label>
+                        <select class="form-select" name="third_prize" id="third_prize">
+                            <option value="">-----select third winner----</option>
+                            <option *ngFor = "let third_prize_arr of third_prize_arr" value="{{third_prize_arr.user_id}}">{{third_prize_arr.full_name}}</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-success" (click)="submitData()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-primary">Reset</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+<section class="event-table">
+    <div class="container">
+        <div class="table-div">
+            
+            <table *ngIf="resultData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Event Name</th>
+                    <th>1<sup>st</sup> Prize (Winner)</th>
+                    <th>2<sup>nd</sup> Prize (Winner)</th>
+                    <th>3<sup>rd</sup> Prize (Winner)</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let resultData of resultData;index as i;">
+                    <td>{{i+1}}</td>
+                    <td>{{resultData.event_name}}</td>
+                    <td>{{resultData.first_prize_text}}</td>
+                    <td>{{resultData.second_prize_text}}</td>
+                    <td>{{resultData.third_prize_text}}</td>
+                    <td class="action">
+                        <!-- <button type="button" id="view-{{resultData.sr_id}}" class="btn btn-success view">view</button> -->
+                        <button data-toggle="modal" data-target="#myModal2" type="button" id="{{resultData.sr_id}}" (click)="getResultById($event)" class="btn btn-primary edit">edit</button>
+                        <button type="button" id="delete-{{resultData.sr_id}}" (click)="deleteResult($event)" class="btn btn-danger delete">delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table *ngIf="!resultData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Event Name</th>
+                      <th>1<sup>st</sup> Prize (Winner)</th>
+                      <th>2<sup>nd</sup> Prize (Winner)</th>
+                      <th>3<sup>rd</sup> Prize (Winner)</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+              </table>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <section class="auth-result">
+                <div class="container">
+                    <div class="box1">
+                        <div class="box-container1">
+                            <h2>Add Result</h2><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">add result</button>
+
+                            <div class="row form-group">
+                               
+                                    <div class="col-md-3">
+                                        <label for="email" class="form-label">Event Name:</label>
+                                        <select class="form-select"  (change)="getFirstWinner($event)" name="event_name" id="event_name">
+                                            <option value="">-----select event name----</option>
+                                            <option *ngFor = "let eventData of eventData" value="{{eventData.event_name}}-{{eventData.sr_id}}">{{eventData.event_name}}</option>
+                                        </select>
+                                    </div>
+                                
+                                <div class="col-md-3">
+                                    <label for="email" class="form-label">1<sup>st</sup> Prize (Winner):</label>
+                                    <select class="form-select" (change)="getSecondWinner($event)" name="first_prize" id="first_prize" >
+                                        <option value="">-----select first winner----</option>
+                                        <option *ngFor = "let first_prize_arr of first_prize_arr" value="{{first_prize_arr.user_id}}">{{first_prize_arr.full_name}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="email" class="form-label">2<sup>nd</sup> Prize (Winner):</label>
+                                    <select class="form-select" (change)="getThirdWinner($event)" name="second_prize" id="second_prize">
+                                        <option value="">-----select second winner----</option>
+                                        <option *ngFor = "let second_prize_arr of second_prize_arr" value="{{second_prize_arr.user_id}}">{{second_prize_arr.full_name}}</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <label for="email" class="form-label">3<sup>rd</sup> Prize (Winner):</label>
+                                    <select class="form-select" (change)="ThirdWinner($event)" name="third_prize" id="third_prize">
+                                        <option value="">-----select third winner----</option>
+                                        <option *ngFor = "let third_prize_arr of third_prize_arr" value="{{third_prize_arr.user_id}}">{{third_prize_arr.full_name}}</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12 text-center">
+                                    <button class="btn btn-success" (click)="submitData()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-primary">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal2 -->
+<div class="modal" id="myModal2">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <section class="auth-result">
+            <div class="container">
+                <div class="box1">
+                    <div class="box-container1">
+                        <h2>Edit Result</h2><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">add result</button>
+
+                        <div class="row form-group">
+                           
+                                <div class="col-md-3">
+                                    <label for="email" class="form-label">Event Name:</label>
+                                    <select class="form-select"  (change)="getFirstWinner($event)"  name="event_name" id="event_name">
+                                        <option value="">-----select event name----</option>
+                                        <option *ngFor = "let eventData of eventData" [selected]="eventData.sr_id==fetchdata.event_id"  value="{{eventData.event_name}}-{{eventData.sr_id}}">{{eventData.event_name}}</option>
+                                    </select>
+                                </div>
+                            
+                            <div class="col-md-3">
+                                <label for="email" class="form-label">1<sup>st</sup> Prize (Winner):</label>
+                                <select class="form-select" (change)="getSecondWinner($event)" name="first_prize" id="first_prize" >
+                                    <option value="">-----select first winner----</option>
+                                    <option *ngFor = "let first_prize_arr of first_prize_arr" [selected]="first_prize_arr.user_id==fetchdata.first_prize" value="{{first_prize_arr.user_id}}">{{first_prize_arr.full_name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="email" class="form-label">2<sup>nd</sup> Prize (Winner):</label>
+                                <select class="form-select" (change)="getThirdWinner($event)" name="second_prize" id="second_prize">
+                                    <option value="">-----select second winner----</option>
+                                    <option *ngFor = "let second_prize_arr of second_prize_arr" [selected]="second_prize_arr.user_id==fetchdata.second_prize" value="{{second_prize_arr.user_id}}">{{second_prize_arr.full_name}}</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <label for="email" class="form-label">3<sup>rd</sup> Prize (Winner):</label>
+                                <select class="form-select" (change)="ThirdWinner($event)" name="third_prize" id="third_prize">
+                                    <option value="">-----select third winner----</option>
+                                    <option *ngFor = "let third_prize_arr of third_prize_arr" [selected]="third_prize_arr.user_id==fetchdata.third_prize" value="{{third_prize_arr.user_id}}">{{third_prize_arr.full_name}}</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-success" (click)="updateResult()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button class="btn btn-primary">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

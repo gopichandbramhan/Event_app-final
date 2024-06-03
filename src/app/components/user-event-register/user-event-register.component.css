@@ -1,0 +1,17 @@
+thead th{
+    background-color: #000 !important;
+    color: #febe00;
+    text-align: center;
+}
+table > thead, tbody{
+    text-align: center;
+}
+span{
+    border-bottom: 2px solid silver;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 5px;
+}
+.table-div{
+    margin-top:30px;
+}

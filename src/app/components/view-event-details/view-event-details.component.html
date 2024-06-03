@@ -1,0 +1,142 @@
+    <section class="view-details">
+        <div class="container">
+            <div class="box-view">
+                <h2>{{event_name}}</h2>
+                <div class="row form-group">
+                    <div class="col-md-6 event-img">
+                        <img class="main-img" src="assets/rangoli.jpg" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event-info">
+                            <span>Description</span>
+                            <p>{{(event_data.event_details)}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4"><img class="prize-img" src="assets/trophy.png" alt=""></div>
+                            <div class="col-md-4"><h5>Prizes</h5></div>
+                            <div class="col-md-4"><img class="prize-img" src="assets/trophy.png" alt=""></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="http://127.0.0.1:9000/prizes/{{(event_data.first_prize_image)}}" class="card-img-bottom" alt="">
+                                <!-- <img src="https://eventapp.laundryholic.com/event_backend/prizes/{{(event_data.first_prize_image)}}" class="card-img-bottom" alt=""> -->
+                                <div class="card-body">
+                                    <h4 class="card-title">1<sup>st</sup> Winner</h4>
+                                    <p class="card-text">{{event_data.first_prize}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <!-- <img src="https://eventapp.laundryholic.com/event_backend/prizes/{{(event_data.second_prize_image)}}" class="card-img-bottom" alt=""> -->
+                                <img src="http://127.0.0.1:9000/prizes/{{(event_data.second_prize_image)}}" class="card-img-bottom" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">2<sup>nd</sup> Winner</h4>
+                                    <p class="card-text">{{event_data.second_prize}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="http://127.0.0.1:9000/prizes/{{(event_data.third_prize_image)}}" class="card-img-bottom" alt="">
+                                <!-- <img src="https://eventapp.laundryholic.com/event_backend/prizes/{{(event_data.third_prize_image)}}" class="card-img-bottom" alt=""> -->
+                                <div class="card-body">
+                                    <h4 class="card-title">3<sup>rd</sup> Winner</h4>
+                                    <p class="card-text">{{event_data.third_prize}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="assets/img/cert.png" class="card-img-bottom" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">For All</h4>
+                                    <p class="card-text">Participation certificate for all</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="tables">
+                                <table class="table ">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="box">
+                                                    <h6 class="head">Event Duration</h6>
+                                                    <p class="para"><b>Start Date : </b>{{event_data.event_start_date}}</p>
+                                                    <p class="para"><b>End Date : </b>{{event_data.event_end_date}}</p>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="box">
+                                                    <h6 class="head">Registration Duration</h6>
+                                                    <p class="para"><b>Start Date : </b>{{event_data.register_start_date}}</p>
+                                                    <p class="para"><b>End Date : </b>{{event_data.register_end_date}}</p>
+                                                </div>
+                                            </td> 
+                                            <td>
+                                                <div class="box">
+                                                    <h6 class="head">Registration Fees</h6>
+                                                    <p class="para fees"><b>₹ {{event_data.registration_fees}}/- only </b></p>
+                                                    <!-- <p class="para"><b>End Date : </b>10/01/2014</p> -->
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="box">
+                                                    <h6 class="head">Register Here</h6>
+                                                    <input *ngIf="event_data.event_type == 'image'" type="file" name="user_file" id="user_file" accept="image/*" (change)="fileUpload($event)">
+                                                    <input *ngIf="event_data.event_type == 'video'" type="file" name="user_file" id="user_file" accept="video/*" (change)="fileUpload($event)">
+                                                    <!-- <a class="btn btn-primary" (click)="doAction()">Register Here</a> -->
+                                                    <a class="btn btn-primary" *ngIf="flag" (click)="paynow()"> Pay Now</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">Event Duration</div>
+                                <p class="card-text eventDuration"><b>Start Date :</b> 10/01/2014</p>
+                                <p class="card-text eventDuration"><b>End Date :</b> 10/01/2014</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">Event Duration</div>
+                                <p class="card-text eventDuration"><b>Start Date :</b> 10/01/2014</p>
+                                <p class="card-text eventDuration"><b>End Date :</b> 10/01/2014</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">Event Duration</div>
+                                <p class="card-text eventDuration"><b>Start Date :</b> 10/01/2014</p>
+                                <p class="card-text eventDuration"><b>End Date :</b> 10/01/2014</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="main">
+        <h2>Banner Image</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Banner Image File</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="file" name="banner-image" (change)="selectInage($event)" id="banner-image" accept="image/*"></td>
+                    <td><button (click)="save()"> Save</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <table *ngIf="fileData;" datatable [dtOptions]="dtOptions" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Banner Image</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fileData of fileData;index as i;">
+                    <td>{{i+1}}</td>
+                    <!-- <td><img src="https://eventapp.laundryholic.com/event_backend/banner_image/{{fileData.banner_image}}" width="50%" alt=""></td> -->
+                    <td><img src="http://127.0.0.1:9000/banner_image/{{fileData.banner_image}}" width="50%" alt=""></td>
+                    <td><button class="btn btn-danger" id="{{fileData.id}}" (click)="deleteImage($event)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <table *ngIf="!fileData;" datatable [dtOptions]="dtOptions" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Banner Image</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>

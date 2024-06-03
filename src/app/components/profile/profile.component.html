@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="main" *ngIf="profileData">
+        <img src="http://127.0.0.1:9000/profile_photo/{{profileData.profile_photo}}" alt="">
+        <hr>
+        <h2>User Details</h2>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td><b>Name :</b></td>
+                    <td><input class="form-control" type="text" name="full_name" id="full_name" [(ngModel)]="name"></td>
+                </tr>
+                <tr>
+                    <td><b>Email Id :</b></td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td><b>Mobile No :</b></td>
+                    <td><input class="form-control" type="text" name="mob_no" id="mob_no" [(ngModel)]="mobile_no"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-success" (click)="updateProfile()">Submit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2>Change Password</h2>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td><b>Current Password :</b></td>
+                    <td><input type="password" class="form-control" name="cpass" id="cpass" [(ngModel)]="currentpass"></td>
+                </tr>
+                <tr>
+                    <td><b>New Password :</b></td>
+                    <td><input type="password" name="newpass" class="form-control" id="newpass" [(ngModel)]="newpass"></td>
+                </tr>
+                <tr>
+                    <td><b>Confirm Password :</b></td>
+                    <td><input type="password" name="confirmpass" class="form-control" id="confirmpass" [(ngModel)]="confirmpass"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-success" (click)="changepass()">Submit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

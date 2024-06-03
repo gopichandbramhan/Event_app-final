@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Event Results</h2>
+    <table *ngIf="resultData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>event name</th>
+                <th>first winner</th>
+                <th>second winner</th>
+                <th>third winner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let resultData of resultData;index as i;">
+                <td>{{i+1}}</td>
+                <td>{{resultData.event_name}}</td>
+                <td>{{resultData.first_prize_text}}</td>
+                <td>{{resultData.second_prize_text}}</td>
+                <td>{{resultData.third_prize_text}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="!resultData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>event name</th>
+                <th>first winner</th>
+                <th>second winner</th>
+                <th>third winner</th>
+            </tr>
+        </thead>
+    </table>
+</div>

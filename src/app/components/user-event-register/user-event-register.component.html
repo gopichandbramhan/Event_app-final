@@ -1,0 +1,49 @@
+<div class="pageStart">
+<section class="event-table">
+    <div class="container">
+        <h2>Register User For Events</h2>
+        <div class="table-div">
+            <table *ngIf="registerUserData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Event Name</th>
+                    <th>User Id</th>
+                    <th>User uploaded file</th>
+                    <th>Payment Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let registerUserData of registerUserData;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{registerUserData.event_name}}</td>
+                    <td>{{registerUserData.user_id}}</td>
+                    <td>
+                      <a href="http://127.0.0.1:9000/user_events_file/{{registerUserData.file}}" target="blank"><img src="http://127.0.0.1:9000/user_events_file/{{registerUserData.file}}" style="width: 10%;" alt=""></a>
+                      <a target="blank" href="http://127.0.0.1:9000/user_events_file/{{registerUserData.file}}">
+                        <video style="width: 10%;"  src="http://127.0.0.1:9000/user_events_file/{{registerUserData.file}}" >
+                          <!-- <a href="https://eventapp.laundryholic.com/event_backend/user_events_file/{{registerUserData.file}}" target="blank"><img src="https://eventapp.laundryholic.com/event_backend/user_events_file/{{registerUserData.file}}" style="width: 10%;" alt=""></a>
+                      <a target="blank" href="https://eventapp.laundryholic.com/event_backend/user_events_file/{{registerUserData.file}}">
+                        <video style="width: 10%;"  src="https://eventapp.laundryholic.com/event_backend/user_events_file/{{registerUserData.file}}" > -->
+                        </video>
+                      </a>
+                    </td>
+                    <td>{{registerUserData.payment_status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table *ngIf="!registerUserData" datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Event Name</th>
+                    <th>User Id</th>
+                    <th>User uploaded file</th>
+                    <th>Payment Status</th>
+                  </tr>
+                </thead>
+              </table>
+        </div>
+    </div>
+</section>
+</div>
