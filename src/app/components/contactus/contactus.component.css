@@ -6,3 +6,13 @@
     width: 50%;
     margin: auto;
 }
+@media screen and (min-width:320px) and (max-width:480px){
+    .main{
+        border: 1px solid silver;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 100%;
+        margin: auto;
+    }
+}

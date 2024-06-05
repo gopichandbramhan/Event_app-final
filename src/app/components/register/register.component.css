@@ -36,24 +36,28 @@ label{
     justify-content: center;
 }
 
+
 .alert{
     display: none;
 }
 
 #image{
     margin-top: 10px;
-    box-shadow: 5px 5px 5px 5px gray;
-    width: 120px;;
+    box-shadow: 3px 2px 2px 2px gray;
+    width: 120px;
     padding: 20px;
     font-weight: 400;
     padding-bottom: 0px;
-    height: 60px;
+    height: 35px;
+    -webkit-user-select: none;
     user-select: none;
-    /* text-decoration:line-through; */
     font-style: italic;
     font-size: x-large;
-    border: red 2px solid;
+    border: red 1px solid;
     margin-left: 10px;
+    margin-bottom: 10px;
+    /* text-decoration:line-through; */
+   
      
 }
 .inline{
@@ -61,4 +65,14 @@ label{
 }
 .refresh{
     margin-left: 50px;
+}
+@media screen and (min-width:320px) and (max-width:480px) {
+    .registerformblock{
+        width: 100%;
+        background-color: silver;
+        border: 1px solid silver;
+        border-radius: 5px;
+        padding: 30px;
+        margin: auto;
+    }
 }
