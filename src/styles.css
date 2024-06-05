@@ -211,18 +211,7 @@ h2 {
     position: relative;
     margin-bottom: 31px !important;
 }
-/* h2:before {
-    position: absolute;
-    /* width: 20%; */
-    /* height: 0px; */
-    content: "";
-    left: 40%;
-    right: 40%;
-    top: 46px;
-    display: flex;
-    border-bottom: 1px;
-    border-style: groove;
-} */
+
 /* .pageStart {
     min-height: 73vh;
 } */
@@ -235,6 +224,7 @@ thead th{
     h4.abhead {
         margin: auto;
         margin-bottom: 20px;
+        text-align: center;
 }
     button,
 .btn {
