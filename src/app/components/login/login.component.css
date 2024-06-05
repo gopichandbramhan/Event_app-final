@@ -13,7 +13,6 @@
 h2{
     text-align: center;
     font-size: 30px;
-    border-bottom: 2px solid #ff4081;
     padding: 10px;
 }
 button{
@@ -63,4 +62,10 @@ label#mat-mdc-form-field-label-0 {
 }
 .refresh{
     margin-left: 50px;
+}
+
+@media screen and (max-width: 768px){
+    .login-div{
+        width: 95%;
+    }
 }
