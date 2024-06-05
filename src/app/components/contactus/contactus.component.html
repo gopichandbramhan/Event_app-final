@@ -1,7 +1,7 @@
 <h2>Contact Us</h2>
 <div class="container">
     <div class="main">
-        <div class="mb-3 mt-3">
+          <div class="mb-3 mt-3">
             <label for="" class="form-label">Full Name:</label>
             <input type="text" class="form-control" id="full_name" [(ngModel)]="full_name" placeholder="Full Name" name="full_name">
           </div>
@@ -17,6 +17,6 @@
             <label for="comment">Message:</label>
             <textarea class="form-control" rows="5" id="message" [(ngModel)]="message" name="message" placeholder="Enter message"></textarea>
           </div>
-          <button type="submit" (click)="sendContactUsdata()" class="btn btn-primary">Submit</button>
+          <button type="submit" (click)="sendContactUsdata()" class="btn">Submit</button>
     </div>
 </div>

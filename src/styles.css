@@ -213,12 +213,12 @@ h2 {
 }
 /* h2:before {
     position: absolute;
-    width: 20%;
-    height: 0px;
+    /* width: 20%; */
+    /* height: 0px; */
     content: "";
     left: 40%;
     right: 40%;
-    top: 38px;
+    top: 46px;
     display: flex;
     border-bottom: 1px;
     border-style: groove;
@@ -264,4 +264,3 @@ thead th{
         width: 100%;
     }
 }
-
