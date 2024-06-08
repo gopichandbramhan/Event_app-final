@@ -24,6 +24,12 @@ button{
     bottom: 10px;
   } */
 
+  .carousel-item img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 90vh;
+  }
   mat-card-content p {
     text-align: justify;
     padding: 10px;
@@ -58,4 +64,17 @@ strong{
   font-size: 20px;
   font-weight: 600;
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-item img{
+    height: 250px;
+    font-size: small;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .carousel-item img{
+    height: 400px;
+  }
 }
