@@ -8,7 +8,7 @@ body { margin: 0;
     background-color: #f44336 !important;
 }
 .color,a:hover{
-    color: #febe00 !important;
+    color: orange !important;
 }
 .dark-bg {
     background: #000 !important;
@@ -99,13 +99,13 @@ html {
 
 button,
 .btn {
-    background: #febe00 !important;
+    background: orange !important;
     color: #000 !important;
 }
 
 button,
 .btn {
-    background: #febe00 !important;
+    background: orange !important;
     color:white;
 }
 
@@ -185,7 +185,7 @@ button,
     padding: 10px 0;
 }
 .btn:hover {
-    background: #febe00 !important;
+    background: orange !important;
     transition-duration: 0.5s;
     color:white;
 }
@@ -208,7 +208,7 @@ h2 {
 
 thead th{
     background-color: #000 !important;
-    color: #febe00 !important;
+    color: orange !important;
     text-align: center !important;
 }
 @media screen and (min-width:320px) and (max-width:480px){
@@ -219,7 +219,7 @@ thead th{
 }
     button,
 .btn {
-    background:#febe00 !important;
+    background:orange !important;
     /* color: #000 !important; */
     color:white;
     margin-bottom: 20px;

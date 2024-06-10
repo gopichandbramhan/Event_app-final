@@ -1,4 +1,96 @@
-section{
-    position: relative;
-    bottom: -108px;
+.footer-container, .footer {
+  background-color: rgb(2, 2, 48);
+}
+.footer-container img {
+  height: 40px;
+  width: 40px;
+}
+.nav-container {
+  width: 75%;
+}
+.footer-container h1 {
+  font-size: 45px;
+  font-weight: bold;
+  color: silver;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.footer-container ul li {
+  list-style-type: square;
+  color: silver;
+}
+.nav-container a {
+  color: silver;
+}
+.nav-container a:hover {
+  text-decoration: none;
+  text-underline-offset: .25rem;
+}
+.nav-content h4 {
+  color: rgb(255, 255, 255);
+}
+.social-icons {
+  width: 150px;
+}
+.instagram, .facebook, .twitter, .google {
+  font-size: 30px;
+  padding: 15px 0px;
+  border: 1px solid rgb(2, 2, 48);
+  background-color: silver;
+}
+.social-icons a {
+  color: rgb(2, 2, 48);
+}
+.instagram {
+  border-bottom-left-radius: 40%;
+  border-top-right-radius: 40%;
+}
+.facebook {
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+.twitter {
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+.google {
+  border-top-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+.instagram:hover, .facebook:hover, .twitter:hover, .google:hover {
+  background-color: rgb(2, 2, 48);
+  border: 1px solid silver;
+  color: orange;
+  cursor: pointer;
+}
+hr {
+  width: 80px;
+  border: 2px solid orange;
+}
+@media screen and (max-width: 480px) {
+  .nav-container {
+    width: 100%;
+  }
+  .nav-content {
+    width: 50%;
+  }
+  .nav-content h4 {
+    font-size: 1em;
+  }
+  .social-icons{
+      width: 100px;
+  }
+  .instagram, .facebook, .twitter, .google {
+    font-size: 18px;
+    width: 50px;
+  }
+  .icon-class {
+    width: fit-content;
+    padding: 0px;
+    transform: translate(50%, 0%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .social-icons {
+    width: fit-content;
+  }
 }
