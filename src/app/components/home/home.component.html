@@ -1,76 +1,153 @@
 <div class="hero-image ">
-  <div class="hero-text">
-      <h1 style="font-size:50px" class="wow slideInLeft">Come Join the FUN !!!</h1>
-      <p class="wow slideInRight">We are the ones Who can make it happen</p>
-      <a class="btn wow slideInUp" href="#">Know More</a>
-  </div>
+    <div class="hero-text">
+        <h1 style="font-size:50px" class="wow slideInLeft">Come Join the FUN !!!</h1>
+        <p class="wow slideInRight">We are the ones Who can make it happen</p>
+        <a class="btn wow slideInUp" href="#">Know More</a>
+    </div>
 </div>
 <div class="cardmain ">
-  <div class="container">
-      <h2 class="sectionHead wow slideInLeft"><span class="headtext">Letest Events</span></h2>
-      <div class="row wow slideInRight" *ngIf="eventData;else anotherDiv">
-          <div class="col-md-4 col-sm-12" *ngFor="let eventDatas of eventData;index as i;">
-              <!-- <div class="text-center cardImgMain cardImgMain2" style="background: url(https://eventapp.laundryholic.com/event_backend/event_images/{{eventDatas.event_image}})"> -->
-                <div class="text-center cardImgMain cardImgMain2" style="background: url(http://127.0.0.1:9000/event_images/{{eventDatas.event_image}})">
-                  <!-- <img src="http://127.0.0.1:9000/event_images/{{(eventDatas.event_image)}}" class="img cardImg" /> -->
-              </div>
-              <h4 class="cardTitle">
-                  <mat-card-title>{{eventDatas.event_name}}</mat-card-title><br>
-                  <!-- <mat-card-subtitle>{{eventDatas.event_name}}</mat-card-subtitle> -->
-              </h4>
-              <p class="cardDesc">{{eventDatas.event_details}}</p>
-              <p><strong>Start Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_start_date}}</p>
-              <p><strong>End Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_end_date}}</p>
-              <button mat-raised-button [routerLink]="['/view-event/',eventDatas.event_name,eventDatas.sr_id]" color="accent">More.......</button>
-          </div>
-      </div>
-      <ng-template #anotherDiv>
-        <div class="msg-div">
-            <p>Currently No Event Found...</p>
+    <div class="container">
+        <h2 class="sectionHead wow slideInLeft"><span class="headtext">Letest Events</span></h2>
+        <div class="row wow slideInRight" *ngIf="eventData;else anotherDiv">
+            <div class="col-md-4 col-sm-12" *ngFor="let eventDatas of eventData;index as i;">
+                <!-- <div class="text-center cardImgMain cardImgMain2" style="background: url(https://eventapp.laundryholic.com/event_backend/event_images/{{eventDatas.event_image}})"> -->
+                <div class="text-center cardImgMain cardImgMain2"
+                    style="background: url(http://127.0.0.1:9000/event_images/{{eventDatas.event_image}})">
+                    <!-- <img src="http://127.0.0.1:9000/event_images/{{(eventDatas.event_image)}}" class="img cardImg" /> -->
+                </div>
+                <h4 class="cardTitle">
+                    <mat-card-title>{{eventDatas.event_name}}</mat-card-title><br>
+                    <!-- <mat-card-subtitle>{{eventDatas.event_name}}</mat-card-subtitle> -->
+                </h4>
+                <p class="cardDesc">{{eventDatas.event_details}}</p>
+                <p><strong>Start Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_start_date}}</p>
+                <p><strong>End Date : </strong>&nbsp;&nbsp;&nbsp;{{eventDatas.event_end_date}}</p>
+                <button mat-raised-button [routerLink]="['/view-event/',eventDatas.event_name,eventDatas.sr_id]"
+                    color="accent">More.......</button>
+            </div>
         </div>
-      </ng-template>
-  </div>
+        <ng-template #anotherDiv>
+            <div class="msg-div">
+                <p>Currently No Event Found...</p>
+            </div>
+        </ng-template>
+    </div>
 </div>
 <div class="testimonials wow bounceInUp">
-  <div class="container">
-      <div class="contentmain text-center">
-          <div class="text-center testiImgMain">
-              <img src="assets/img/quotes.svg" class="img testiImg" />
-          </div>
-          <blockquote class="blktext">
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua."
-          </blockquote>
-          <p class="auother"><i>by: Test Authers</i></p>
-      </div>
-  </div>
+    <div class="container">
+        <div class="contentmain text-center">
+            <div class="text-center testiImgMain">
+                <img src="assets/img/quotes.svg" class="img testiImg" />
+            </div>
+            <blockquote class="blktext">
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua."
+            </blockquote>
+            <p class="auother"><i>by: Test Authers</i></p>
+        </div>
+    </div>
 </div>
 <div class="About">
-  <div class="container">
-      <div class="aboutcontentmain">
-          <div class="row d-flex">
-            <div class="col-md-6 col-sm-12 m-auto wow slideInLeft">
-              <div class="abImgmain1 cardImgMain">
-              </div>
-          </div>
-              <div class="col-md-6 col-sm-12 m-auto wow slideInRight">
-                  <div class="Abconmain">
-                      <h4 class="abhead">Hot Event</h4>
-                      <h2 class="abMainhead">New Event in the town.</h2>
-                      <p class="abdesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      <div class="text-center">
-                          <a href="#" class="btn findmorebnt"> Find out More Details</a>
-                      </div>
-                  </div>
-              </div>
-              
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="aboutcontentmain">
+            <div class="row d-flex">
+                <div class="col-md-6 col-sm-12 m-auto wow slideInLeft">
+                    <div class="abImgmain1 cardImgMain">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 m-auto wow slideInRight">
+                    <div class="Abconmain">
+                        <h4 class="abhead">Hot Event</h4>
+                        <h2 class="abMainhead">New Event in the town.</h2>
+                        <p class="abdesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn findmorebnt"> Find out More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="event-main-container container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 event-container-heading m-auto">
+            <h1><img src="https://www.pngarts.com/files/1/Letter-E-Transparent-Background-PNG.png" width="60px"
+                    height="60px">vents</h1>
+            <p>"Join us for an unforgettable<br>
+                experience
+                filled with excitement and <br>
+                inspiration."</p>
+            <a href="#" routerLink="user-event">view more</a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 img-event-container-div">
+            <img src="assets/img/event-banner-img.jpg" alt="event-banner-image" />
+        </div>
+    </div>
+</div>
+
+<div class="container review-main-container ">
+    <div class="review-container container m-auto">
+        <h6 class="review-heading">Testimonals</h6>
+        <div class="col-lg-12 col-md-12 col-sm-12 .review-cards">
+            <div class="row  d-flex m-auto">
+                <div class="card col-lg-4 col-md-4 col-sm-12 m-auto mb-3">
+                    <img src="https://th.bing.com/th/id/OIP.PqBYGErQeWQWhbA_VeUBDQHaHa?rs=1&pid=ImgDetMain" alt=""
+                        width="80px" height="80px">
+                    <h3 class="mt-2">FULL NAME</h3>
+                    <div class="d-flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <p class="text-center mt-3 m-2">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Deserunt at omnis eum rerum ab mollitia,
+                        facilis inventore nesciunt?</p>
+                </div>
+                <div class="card col-lg-4 col-md-4 col-sm-12 m-auto mb-3">
+                    <img src="https://th.bing.com/th/id/OIP.PqBYGErQeWQWhbA_VeUBDQHaHa?rs=1&pid=ImgDetMain" alt=""
+                        width="80px" height="80px">
+                    <h3 class="mt-2">FULL NAME</h3>
+                    <div class="d-flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-center mt-3 m-2">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        Soluta praesentium ipsum at, aliquam libero
+                        facilis inventore nesciunt?</p>
+                </div>
+                <div class="card col-lg-4 col-md-4 col-sm-12 m-auto mb-3 card-3">
+                    <img src="https://th.bing.com/th/id/OIP.PqBYGErQeWQWhbA_VeUBDQHaHa?rs=1&pid=ImgDetMain" alt=""
+                        width="80px" height="80px">
+                    <h3 class="mt-2">FULL NAME</h3>
+                    <div class="d-flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-center mt-3 m-2">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        Soluta praesentium ipsum at, aliquam libero
+                        facilis inventore nesciunt?</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

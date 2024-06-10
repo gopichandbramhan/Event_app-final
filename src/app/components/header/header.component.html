@@ -26,14 +26,6 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="register">register</a>
               </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link</a></li>
-                  <li><a class="dropdown-item" href="#">Another link</a></li>
-                  <li><a class="dropdown-item" href="#">A third link</a></li>
-                </ul>
-              </li> -->
             </ul>
             <ul class="navbar-nav" *ngIf="user_type =='User'">
               <li class="nav-item">
@@ -48,7 +40,6 @@
               <li class="nav-item">
                   <a class="nav-link"  routerLink="user-result">Result</a>
               </li>  
-
               <li class="nav-item">
                   <a class="nav-link" (click)="logout()">logout</a>
               </li>
