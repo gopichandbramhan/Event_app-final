@@ -1,60 +1,17 @@
 button{
-    position: absolute;
-    right: 20px;
-    bottom: 15px;
+    
 }
 
  h2{
-    /* border-bottom: 3px solid #ff4081; */
     font-weight: 600;
     font-size: 24px;
 }
-.example-card {
-    max-width: 400px;
-}
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-
-  /* button{
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-  } */
-
   .carousel-item img{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
     height: 90vh;
   }
-  mat-card-content p {
-    text-align: justify;
-    padding: 10px;
-  }
-
-  mat-card-content mat-card-title, mat-card-content mat-card-subtitle {
-    text-align: justify;
-    padding: 5px 10px 0px 10px;;
-  }
-
-  .event-box{
-    border: 1px solid silver;
-    padding: 20px 15px 20px 15px;
-    border-radius: 5px;
-}
-
-strong{
-    border-bottom: 2px solid #ff4081;
-}
-.sliderMain {
-  margin-top: -30px;
-}
-/* .carousel-inner>.item>img {
-  height: 500px;
-} */
 
 .msg-div{
   width: 50%;
@@ -66,15 +23,142 @@ strong{
   text-align: center;
 }
 
+/* --------------------------- */
+.homebg{
+  background-image: url("/assets/img/heroImg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  color: orange;
+  margin-top: -19px;
+}
+.homebg h1{
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif !important;
+}
+.btn-home{
+  border: none;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: 1s;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.btn-home:hover{
+  background-color: rgb(254, 183, 51) !important;
+}
+
+/* =-------------------------- */
+.eventhead{
+  background-image: url("/assets/img/banner3.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px 0px;
+  border: 10px solid #fff3e0;
+  margin-top: 80px;
+}
+.eventhead h3{
+  color: rgb(2, 2, 48);
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif !important;
+}
+.eventcards{
+  background-color: #FEF6E9;;
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.eventcards a{
+  width: fit-content;
+}
+.eventcards div{
+  background-color: white;
+  border-right: 7px solid #FEF6E9;
+  padding: 50px 13px;
+}
+.eventcards h5{
+  color: orange;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px 0px 0px 5px;
+}
+.eventcards p{
+  padding: 5px 0px 0px 5px;
+  color: rgb(255, 228, 179);
+}
+.eventcards button:hover{
+  background-color: rgb(252, 168, 58) !important;
+}
+.eventcards button{
+  outline: none;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+.rangoli{
+  background-image: url("/assets/img/banner2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.dancing{
+  background-image: url("/assets/img/bannerCopy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.drawing{
+  background-image: url("/assets/img/banner1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* =-------------------------- */
+
+
+
 @media screen and (max-width: 480px) {
   .carousel-item img{
     height: 250px;
     font-size: small;
+  }
+  .eventhead h3{
+    font-size: 51px;
+  }
+  .eventhead{
+    margin-top: 20px;
+    height: 200px;
+  }
+  .eventcards div{
+    margin-top: 5px;
+  }
+  .eventcards h5{
+    font-size: 16px;
+  }
+  .homebg{
+    height: 200px;
+  }
+  .homebg h1{
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
   .carousel-item img{
     height: 400px;
+  }
+  .eventcards h5{
+    font-size: medium;
+  }
+  .homebg{
+    height: 500px;
   }
 }

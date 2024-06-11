@@ -15,9 +15,7 @@
             <mat-label>Password</mat-label>
             <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Password">
         </mat-form-field>
-        <div id="image"
-             class="inline"
-             selectable="False" [innerHTML]="printCaptcha">
+        <div id="image" class="inline" selectable="False" [innerHTML]="printCaptcha">
         </div>
         <div class="inline refresh" (click)="generate()">
             <i class="fas fa-sync"></i>
@@ -26,11 +24,14 @@
             <mat-label>Captcha</mat-label>
             <input matInput type="text" name="captcha" [(ngModel)]="captcha" placeholder="captcha">
         </mat-form-field>
-        <div class="btn-div">
-            <button mat-raised-button color="primary" (click)="login()">Login</button>
-            <button mat-raised-button type="reset" >Reset</button>
+        <div class="btn-div d-flex justify-content-between align-items-center">
+            <div>
+                <button mat-raised-button color="primary" (click)="login()">Login</button>
+                <button mat-raised-button type="reset">Reset</button>
+            </div>
+            <a routerLink="/register">Register Yourself</a>
         </div>
         <br>
         <a routerLink="/forgotpass">Forgot Password</a>
     </div>
-  </div>
+</div>

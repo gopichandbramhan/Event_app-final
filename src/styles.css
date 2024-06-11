@@ -131,16 +131,6 @@ button,
     position: relative;
 }
 
-/* .headtext:after {
-    content: "";
-    width: 50%;
-    height: 4px;
-    background: yellow;
-    position: absolute;
-    top: 125%;
-    left: 25%;
-} */
-
 .testimonials {
     padding: 50px 0;
     background: #f6f8f5;
