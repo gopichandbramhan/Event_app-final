@@ -90,6 +90,7 @@ html {
 .nav>li>a:focus,
 .nav>li>a:hover {
     background-color: #dddddd61 !important;
+    background-color: rgb(2, 2, 48);
     color: #ff0 !important
 }
 
@@ -138,7 +139,7 @@ button,
 
 .testimonials {
     padding: 50px 0;
-    background: #f6f8f5;
+    /* background: #f6f8f5; */
     margin: 50px 0;
 }
 
@@ -174,7 +175,10 @@ button,
 }
 
 .abMainhead {
-    font-family: auto;
+    font-family: auto; 
+     color:#ff7b00;
+    font-size: 30px;
+
 }
 
 .abdesc {
