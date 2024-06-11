@@ -1,6 +1,3 @@
-button{
-    
-}
 
  h2{
     font-weight: 600;
@@ -17,11 +14,76 @@ button{
   width: 50%;
   margin: auto;
 }
-.msg-div p{
+.event-container-heading h1 {
+  font-size: 80px;
+}
+
+.event-container-heading p {
+  font-size: 36px;
+  font-weight: lighter;
+  line-height: 47px;
+  color: rgb(62, 60, 60);
+  margin-bottom: 30px;
+}
+
+.event-container-heading a {
+  background-color: black;
   font-size: 20px;
-  font-weight: 600;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.img-event-container-div {
+  background-color: #ff7b00;
+  width: 500px;
+  height: 500px;
+  padding: 50px 20px 45px 0;
+}
+
+.img-event-container-div img {
+  height: 402px;
+  margin-left: -150px;
+}
+
+.review-main-container {
+  background-color: #ff7b00;
+  padding: 30px 0 30px 80px;
+  margin-top: 50px;
+}
+
+.review-heading {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #ff7b00;
+}
+
+.review-container {
+  background-color: #f6f8f5;
+  padding-bottom:18px;
+  border-top-left-radius: 75px;
+  /* border-bottom-left-radius: 200px; */
+}
+
+.review-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px 0 20px 0;
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
+
 
 /* --------------------------- */
 .homebg{
@@ -126,9 +188,49 @@ button{
 
 
 @media screen and (max-width: 480px) {
-  .carousel-item img{
+.card i {
+  color: #ff7b00;
+  text-decoration: none !important;
+}
+
+@media screen and (min-width:562px) and (max-width:768px) {
+  .event-container-heading h1 {
+    font-size: 70px;
+  }
+
+  .card {
+    width: 30%;
+    align-items: center;
+    border-radius: 15px;
+    padding: 20px 0 20px 0;
+    width: 260px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+
+  .card-3 {
+    display: none;
+  }
+
+  .img-event-container-div img {
+    margin-left: -107px;
+    width: 340px;
     height: 250px;
-    font-size: small;
+  }
+
+  .img-event-container-div {
+    background-color: #ff7b00;
+    width: 263px;
+    height: 325px;
+    padding: 40px 40px 40px 0;
+  }
+
+  .event-container-heading p {
+    font-size: 22px;
+    font-weight: lighter;
+    line-height: 35px;
+    color: rgb(62, 60, 60);
+    margin-bottom: 30px;
   }
   .eventhead h3{
     font-size: 51px;
@@ -151,9 +253,81 @@ button{
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px){
-  .carousel-item img{
-    height: 400px;
+.img-event-div {
+  width: 400px;
+  height: 450px;
+  background-color: red;
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+  .img-event-container-div img {
+    height: 402px;
+    margin-left: -184px;
+    width: 450px;
+    height: 270px;
+  }
+
+  .img-event-container-div {
+    background-color: #ff7b00;
+    width: 300px;
+    height: 350px;
+    padding: 42px 42px 42px 0;
+  }
+
+  .event-container-heading p {
+    font-size: 27px;
+    font-weight: lighter;
+    line-height: 39px;
+    color: rgb(62, 60, 60);
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width:320px) and (max-width:480px) {
+  .event-container-heading {
+    text-align: center;
+    margin: auto;
+  }
+
+  .event-container-heading h1 {
+    font-size: 70px;
+  }
+
+  .img-event-container-div {
+    background-color: #ff7b00;
+    width: 300px;
+    height: 250px;
+    padding: 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .img-event-container-div img {
+    height: 202px;
+    width: 250px;
+    margin: 25px 0 0px 25px;
+  }
+
+  .review-main-container {
+    background-color: #ff7b00;
+    padding: 0px;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+  .review-heading {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .review-container {
+    background-color: #ff7b00;
+    padding-bottom: 50px;
+
   }
   .eventcards h5{
     font-size: medium;
@@ -161,4 +335,4 @@ button{
   .homebg{
     height: 500px;
   }
-}
+}}

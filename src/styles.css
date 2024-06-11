@@ -20,6 +20,11 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:host{
+    --themeColor:#212121;;
+    --heading-color:#ff7b00;
+}
+
 /*banner main*/
 .hero-image {
     height: 98vh;
@@ -169,7 +174,6 @@ button,
 }
 
 .abMainhead {
-    /* margin: 30px 0; */
     font-family: auto;
 }
 
@@ -202,9 +206,6 @@ h2 {
     margin-bottom: 31px !important;
 }
 
-/* .pageStart {
-    min-height: 73vh;
-} */
 thead th{
     background-color: #000 !important;
     color: orange !important;
