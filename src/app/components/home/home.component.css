@@ -1,4 +1,5 @@
 
+
  h2{
     font-weight: 600;
     font-size: 24px;
@@ -9,13 +10,49 @@
     background-size:cover;
     height: 90vh;
   }
-
-.msg-div{
-  width: 50%;
-  margin: auto;
+.ab-container{
+  background-color: rgb(2, 2, 48);
+}
+.abMainhead{
+  color:#ff7b00;
+  font-size: 30px;
+}
+.main-container-sponser{
+  /* background-color: #FEF6E9; */
+  background: url('https://madinfluence.com/static/media/test1.7462a894.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding-bottom: 50px;
+}
+.sponser-container{
+  background-color: rgb(2, 2, 48);
+  padding:10px;
+  width: 65%;
+  border-radius: 50px;
+}
+.sponser-container h1{
+  color:#ff7b00;
+  font-size: 40px;
+  text-align: center;
+  padding:30px;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+}
+/* .sponser-container h1 span{
+  border-bottom:2px solid #ff7b00 ;
+} */
+.sponser-container h1 span:hover{
+  color: white;
+}
+.sponser-image{
+  background-color: white;
+  border-radius: 50px;
+ margin:0px 40px -70px 40px;
 }
 .event-container-heading h1 {
   font-size: 80px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .event-container-heading p {
@@ -50,7 +87,7 @@
 .review-main-container {
   background-color: #ff7b00;
   padding: 30px 0 30px 80px;
-  margin-top: 50px;
+  margin:50px  50px;
 }
 
 .review-heading {
@@ -59,7 +96,9 @@
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: #ff7b00;
+  color: rgb(2, 2, 48);
+  font-family: "Times New Roman", Times, serif;
+ 
 }
 
 .review-container {
@@ -197,7 +236,12 @@
   .event-container-heading h1 {
     font-size: 70px;
   }
-
+  .sponser-container{
+    background-color: rgb(2, 2, 48);
+    padding:10px;
+    width: 90%;
+    border-radius: 50px;
+  }
   .card {
     width: 30%;
     align-items: center;
@@ -284,6 +328,12 @@
 }
 
 @media screen and (min-width:320px) and (max-width:480px) {
+  .sponser-container{
+    background-color: rgb(2, 2, 48);
+    padding:10px;
+    width: 100%;
+    border-radius: 50px;
+  }
   .event-container-heading {
     text-align: center;
     margin: auto;
